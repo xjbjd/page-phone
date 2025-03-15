@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notifications</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            text-align: center;
+        }
+
+        /* Notification Button */
+        .noti-btn {
+            padding: 10px 20px;
+            background: blue;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        /* Notification Box */
+        .notification-container {
+            position: absolute;
+            top: 60px;
+            right: 20px;
+            width: 350px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            display: none;
+        }
+
+        .notification {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .notification.unread {
+            background: #e7f3ff;
+        }
+
+        .notification:hover {
+            background: #d0e3ff;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            background: blue;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .read .dot {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Button to Toggle Notifications -->
+<button class="noti-btn" onclick="toggleNotifications()">🔔   <img src="icon/sub.png"></button>
+
+<!-- Notification Box -->
+<div class="notification-container" id="notiBox">
+    <div class="notification unread" onclick="markAsRead(this)">
+        <div class="dot"></div>
+        <p>MN GAMER KH was live: "ARK Survival Mod Primal Fear 11"</p>
+    </div>
+    <div class="notification unread" onclick="markAsRead(this)">
+        <div class="dot"></div>
+        <p>Sovanachara Ny reacted to your video.</p>
+    </div>
+    <div class="notification unread" onclick="markAsRead(this)">
+        <div class="dot"></div>
+        <p>MN GAMER KH shared a reel: "អារម្មណ៍រីករាយ..."</p>
+    </div>
+</div>
+
+<script>
+    function toggleNotifications() {
+        var notiBox = document.getElementById("notiBox");
+        if (notiBox.style.display === "block") {
+            notiBox.style.display = "none";
+        } else {
+            notiBox.style.display = "block";
+        }
+    }
+
+    function markAsRead(element) {
+        element.classList.remove('unread');
+        element.classList.add('read');
+    }
+</script>
+
+</body>
+</html>

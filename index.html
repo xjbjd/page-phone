@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+   
+</head>
+<body>
+    <script>
+                const track = document.querySelector('.carousel-track');
+        const prevButton = document.querySelector('.prev');
+        const nextButton = document.querySelector('.next');
+        let index = 0;
+        const totalSlides = document.querySelectorAll('.carousel-item').length;
+
+        // Auto-scroll every 3 seconds
+        function autoScroll() {
+        index = (index + 1) % totalSlides;
+        track.style.transform = `translateX(-${index * 100}%)`;
+        }
+
+        let autoScrollInterval = setInterval(autoScroll, 3000);
+
+        // Manual Navigation
+        nextButton.addEventListener('click', () => {
+        clearInterval(autoScrollInterval);
+        autoScroll();
+        autoScrollInterval = setInterval(autoScroll, 3000);
+        });
+
+        prevButton.addEventListener('click', () => {
+        clearInterval(autoScrollInterval);
+        index = (index - 1 + totalSlides) % totalSlides;
+        track.style.transform = `translateX(-${index * 100}%)`;
+        autoScrollInterval = setInterval(autoScroll, 3000);
+        });
+
+    </script>
+    <div class="nav">
+        <div class="search">
+            <a href="#">
+                <img src="icon/manu.png">
+            </a>
+            <h2> Company</h2>
+           
+        </div>
+        <div class="home">
+            <img src="logo/images (5).png">
+            <input type="search " placeholder="ស្វែងរក...">
+            <img src="icon/search.png">
+        </div>
+        <div class="user">
+            <div class="m">
+                <a href="#">
+                    <img src="icon/manu.webp">
+                </a>
+            </div>
+            <div class="c">
+                <a href="#">
+                    <img src="icon/chart.png">
+                </a>
+            </div>
+            <div class="s">
+                <button class="noti-btn" id="notiIcon">
+                    <img src="icon/sub.png" alt="Notification">
+                </button>
+            </div>
+            
+          
+            <div class="notification-container" id="notiBox">
+                <div class="notification unread" onclick="markAsRead(this)">
+                    <div class="dot"></div>
+                    <p>MN GAMER KH was live: "ARK Survival Mod Primal Fear 11"</p>
+                </div>
+                <div class="notification unread" onclick="markAsRead(this)">
+                    <div class="dot"></div>
+                    <p>Sovanachara Ny reacted to your video.</p>
+                </div>
+                <div class="notification unread" onclick="markAsRead(this)">
+                    <div class="dot"></div>
+                    <p>MN GAMER KH shared a reel: "អារម្មណ៍រីករាយ..."</p>
+                </div>
+                <div class="notification unread" onclick="markAsRead(this)">
+                    <div class="dot"></div>
+                    <p>MN GAMER KH shared a reel: "អារម្មណ៍រីករាយ..."</p>
+                </div>
+                <div class="notification unread" onclick="markAsRead(this)">
+                    <div class="dot"></div>
+                    <p>MN GAMER KH shared a reel: "អារម្មណ៍រីករាយ..."</p>
+                </div>
+            </div>
+            
+            <script>
+                // Function to show/hide notifications
+                document.getElementById("notiIcon").addEventListener("click", function() {
+                    var notiBox = document.getElementById("notiBox");
+                    notiBox.style.display = (notiBox.style.display === "block") ? "none" : "block";
+                });
+            
+                // Function to mark notifications as read
+                function markAsRead(element) {
+                    element.classList.remove('unread');
+                    element.classList.add('read');
+                }
+            </script>
+                
+            <div class="u">
+                <a href="profal.html">
+                    <img src="icon/user.png">
+                </a>
+            </div>
+           
+        </div>
+    </div>
+    <div class="main">
+        <div class="left">
+            <a href="#" class="box">
+                <img src="icon/home.png">
+                <h2>Home</h2>
+            </a>
+            <hr width="100%">
+            <h2>Entity</h2>
+            <a href="#" class="box">
+                <img src="icon/sport.png">
+                <h2>Sport</h2>
+            </a>
+            <a href="#" class="box">
+                <img src="icon/Electronics.png">
+                <h2>Electronics</h2>
+            </a>
+            <a href="#" class="box">
+                <img src="icon/drink.png">
+                <h2>Drink</h2>
+            </a>
+            <a href="#" class="box">
+                <img src="icon/car.png">
+                <h2>Cars</h2>
+            </a>
+            <a href="#" class="box">
+                <img src="icon/Motorcycle.png">
+                <h2>Motorcycle</h2>
+            </a>
+            <a href="#" class="box">
+                <img src="icon/Repair kit.png">
+                <h2>Repair kit</h2>
+            </a>
+            <a href="#" class="box">
+                <img src="icon/Ready to learn.png">
+                <h2>Ready to learn</h2>
+            </a>
+            <a href="#" class="box">
+                <img src="icon/Shoes.png">
+                <h2>Shoes</h2>
+            </a>
+            <a href="#" class="box">
+                <img src="icon/Clothes.png">
+                <h2>Clothes</h2>
+            </a>
+            <a href="#" class="box">
+                <img src="icon/Bicycle.png">
+                <h2>Bicycle</h2>
+            </a>
+            <a href="#" class="box">
+                <img src="icon/Fruit.png">
+                <h2>Fruit</h2>
+            </a>
+            <a href="#" class="box">
+                <img src="icon/Lotion.png">
+                <h2>Lotion</h2>
+            </a>
+            <a href="#" class="box">
+                <img src="icon/advertising.png">
+                <h2>User Nmae</h2>
+            </a>
+           
+            <a href="#" class="box">
+                <img src="icon/card.png">
+                <h2>Cards</h2>
+            </a>
+           
+            <a href="#" class="box">
+                <img src="icon/cado.png">
+                <h2>Birthday</h2>
+            </a>
+           
+            <a href="#" class="box">
+                <img src="icon/pade.png">
+                <h2>pages</h2>
+            </a>
+            <a href="#" class="box">
+                <img src="icon/save.png">
+                <h2>Saved</h2>
+            </a>
+            <a href="#" class="box">
+                <img src="icon/date.png">
+                <h2>Recent ad activity</h2>
+            </a>
+            <a href="#" class="box">
+                <img src="icon/pade.png">
+                <h2>User Nmae</h2>
+            </a>
+            <a href="#" class="box">
+                <img src="icon/pade.png">
+                <h2>User Nmae</h2>
+            </a>
+
+            <hr width="100%">
+            <h2>Your shortcuts</h2>
+            <a href="#" class="box">
+                <img src="icon/pade.png">
+                <h2>User Nmae</h2>
+            </a>
+            <a href="#" class="box">
+                <img src="icon/pade.png">
+                <h2>User Nmae</h2>
+            </a>
+            <a href="#" class="box">
+                <img src="icon/pade.png">
+                <h2>User Nmae</h2>
+            </a>
+            <a href="#" class="box">
+                <img src="icon/pade.png">
+                <h2>User Nmae</h2>
+            </a>
+            <a href="#" class="box">
+                <img src="icon/pade.png">
+                <h2>User Nmae</h2>
+            </a>
+            <a href="#" class="box">
+                <img src="icon/pade.png">
+                <h2>User Nmae</h2>
+            </a>
+           
+        </div>
+        <div class="right">
+            <div class="in-center">
+                <div class="container">
+                    <div class="scroll">
+                        <div class="manu-scrol">
+                            <ul>
+                                <li>
+                                    <a href="#" class="hom">Home</a></li>
+                                <li>
+                                    <a href="#">Home</a>
+                                    <div class="sub">
+                                        <ul>
+                                            <li><a href="#">1</a></li>
+                                            <li><a href="#">1</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="#">Home</a>
+                                    <div class="sub">
+                                        <ul>
+                                            <li><a href="#">1</a></li>
+                                            <li><a href="#">1</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="#">Home</a>
+                                    <div class="sub">
+                                        <ul>
+                                            <li><a href="#">1</a></li>
+                                            <li><a href="#">1</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="#">Home</a>
+                                    <div class="sub">
+                                        <ul>
+                                            <li><a href="#">1</a></li>
+                                            <li><a href="#">1</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="#" class="hom1">Home</a>
+                                    <div class="sub">
+                                        <ul>
+                                            <li><a href="#">1</a></li>
+                                            <li><a href="#">1</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                
+                            </ul>
+                        </div>
+                        
+                            <div class="carousel">
+                                <button class="carousel-button prev">&#10094;</button>
+                                <div class="carousel-track">
+                                  <div class="carousel-item"><img src="4.jpg" alt="Image 1"></div>
+                                  <div class="carousel-item"><img src="2.jpg" alt="Image 2"></div>
+                                  <div class="carousel-item"><img src="3.webp" alt="Image 3"></div>
+                                 
+                                </div>
+                                <button class="carousel-button next">&#10095;</button>
+                              </div>
+                              
+                            
+                        
+                       
+                        <div class="product">
+                            <div class="j">
+                                <Ul>
+                                    <li>
+                                        <a href="#">
+                                            <div class="photo">
+                                                <img src="computer/1.jpg">
+                                            </div>
+                                            <div class="text">
+                                                <h3>ASUS ROG Zephyrus G14 GA403UV-QS201W ( R9 8945HS / 16GB / SSD 1TB</h3>
+                                                <h2>$1,699.00      </h2>
+                                            </div>
+                                            <div class="hover"></div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div class="photo">
+                                                <img src="computer/1.jpg">
+                                            </div>
+                                            <div class="text">
+                                                <h3>ASUS ROG Zephyrus G14 GA403UV-QS201W ( R9 8945HS / 16GB / SSD 1TB</h3>
+                                                <h2>$1,699.00      </h2>
+                                            </div>
+                                            <div class="hover"></div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div class="photo">
+                                                <img src="computer/1.jpg">
+                                            </div>
+                                            <div class="text">
+                                                <h3>ASUS ROG Zephyrus G14 GA403UV-QS201W ( R9 8945HS / 16GB / SSD 1TB</h3>
+                                                <h2>$1,699.00      </h2>
+                                            </div>
+                                            <div class="hover"></div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div class="photo">
+                                                <img src="computer/1.jpg">
+                                            </div>
+                                            <div class="text">
+                                                <h3>ASUS ROG Zephyrus G14 GA403UV-QS201W ( R9 8945HS / 16GB / SSD 1TB</h3>
+                                                <h2>$1,699.00      </h2>
+                                            </div>
+                                            <div class="hover"></div>
+                                        </a>
+                                    </li>
+                                    
+                                </Ul>
+                            </div>
+                            <div class="j">
+                                <Ul>
+                                    <li>
+                                        <a href="#">
+                                            <div class="photo">
+                                                <img src="computer/1.jpg">
+                                            </div>
+                                            <div class="text">
+                                                <h3>ASUS ROG Zephyrus G14 GA403UV-QS201W ( R9 8945HS / 16GB / SSD 1TB</h3>
+                                                <h2>$1,699.00      </h2>
+                                            </div>
+                                            <div class="hover"></div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div class="photo">
+                                                <img src="computer/1.jpg">
+                                            </div>
+                                            <div class="text">
+                                                <h3>ASUS ROG Zephyrus G14 GA403UV-QS201W ( R9 8945HS / 16GB / SSD 1TB</h3>
+                                                <h2>$1,699.00      </h2>
+                                            </div>
+                                            <div class="hover"></div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div class="photo">
+                                                <img src="computer/1.jpg">
+                                            </div>
+                                            <div class="text">
+                                                <h3>ASUS ROG Zephyrus G14 GA403UV-QS201W ( R9 8945HS / 16GB / SSD 1TB</h3>
+                                                <h2>$1,699.00      </h2>
+                                            </div>
+                                            <div class="hover"></div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div class="photo">
+                                                <img src="computer/1.jpg">
+                                            </div>
+                                            <div class="text">
+                                                <h3>ASUS ROG Zephyrus G14 GA403UV-QS201W ( R9 8945HS / 16GB / SSD 1TB</h3>
+                                                <h2>$1,699.00      </h2>
+                                            </div>
+                                            <div class="hover"></div>
+                                        </a>
+                                    </li>
+                                    
+                                </Ul>
+                            </div>
+                            <div class="j">
+                                <Ul>
+                                    <li>
+                                        <a href="#">
+                                            <div class="photo">
+                                                <img src="computer/1.jpg">
+                                            </div>
+                                            <div class="text">
+                                                <h3>ASUS ROG Zephyrus G14 GA403UV-QS201W ( R9 8945HS / 16GB / SSD 1TB</h3>
+                                                <h2>$1,699.00      </h2>
+                                            </div>
+                                            <div class="hover"></div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div class="photo">
+                                                <img src="computer/1.jpg">
+                                            </div>
+                                            <div class="text">
+                                                <h3>ASUS ROG Zephyrus G14 GA403UV-QS201W ( R9 8945HS / 16GB / SSD 1TB</h3>
+                                                <h2>$1,699.00      </h2>
+                                            </div>
+                                            <div class="hover"></div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div class="photo">
+                                                <img src="computer/1.jpg">
+                                            </div>
+                                            <div class="text">
+                                                <h3>ASUS ROG Zephyrus G14 GA403UV-QS201W ( R9 8945HS / 16GB / SSD 1TB</h3>
+                                                <h2>$1,699.00      </h2>
+                                            </div>
+                                            <div class="hover"></div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div class="photo">
+                                                <img src="computer/1.jpg">
+                                            </div>
+                                            <div class="text">
+                                                <h3>ASUS ROG Zephyrus G14 GA403UV-QS201W ( R9 8945HS / 16GB / SSD 1TB</h3>
+                                                <h2>$1,699.00      </h2>
+                                            </div>
+                                            <div class="hover"></div>
+                                        </a>
+                                    </li>
+                                    
+                                </Ul>
+                            </div>
+                            <div class="j">
+                                <Ul>
+                                    <li>
+                                        <a href="#">
+                                            <div class="photo">
+                                                <img src="computer/1.jpg">
+                                            </div>
+                                            <div class="text">
+                                                <h3>ASUS ROG Zephyrus G14 GA403UV-QS201W ( R9 8945HS / 16GB / SSD 1TB</h3>
+                                                <h2>$1,699.00      </h2>
+                                            </div>
+                                            <div class="hover"></div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div class="photo">
+                                                <img src="computer/1.jpg">
+                                            </div>
+                                            <div class="text">
+                                                <h3>ASUS ROG Zephyrus G14 GA403UV-QS201W ( R9 8945HS / 16GB / SSD 1TB</h3>
+                                                <h2>$1,699.00      </h2>
+                                            </div>
+                                            <div class="hover"></div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div class="photo">
+                                                <img src="computer/1.jpg">
+                                            </div>
+                                            <div class="text">
+                                                <h3>ASUS ROG Zephyrus G14 GA403UV-QS201W ( R9 8945HS / 16GB / SSD 1TB</h3>
+                                                <h2>$1,699.00      </h2>
+                                            </div>
+                                            <div class="hover"></div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div class="photo">
+                                                <img src="computer/1.jpg">
+                                            </div>
+                                            <div class="text">
+                                                <h3>ASUS ROG Zephyrus G14 GA403UV-QS201W ( R9 8945HS / 16GB / SSD 1TB</h3>
+                                                <h2>$1,699.00      </h2>
+                                            </div>
+                                            <div class="hover"></div>
+                                        </a>
+                                    </li>
+                                    
+                                </Ul>
+                            </div>
+                            <div class="j">
+                                <Ul>
+                                    <li>
+                                        <a href="#">
+                                            <div class="photo">
+                                                <img src="computer/1.jpg">
+                                            </div>
+                                            <div class="text">
+                                                <h3>ASUS ROG Zephyrus G14 GA403UV-QS201W ( R9 8945HS / 16GB / SSD 1TB</h3>
+                                                <h2>$1,699.00      </h2>
+                                            </div>
+                                            <div class="hover"></div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div class="photo">
+                                                <img src="computer/1.jpg">
+                                            </div>
+                                            <div class="text">
+                                                <h3>ASUS ROG Zephyrus G14 GA403UV-QS201W ( R9 8945HS / 16GB / SSD 1TB</h3>
+                                                <h2>$1,699.00      </h2>
+                                            </div>
+                                            <div class="hover"></div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div class="photo">
+                                                <img src="computer/1.jpg">
+                                            </div>
+                                            <div class="text">
+                                                <h3>ASUS ROG Zephyrus G14 GA403UV-QS201W ( R9 8945HS / 16GB / SSD 1TB</h3>
+                                                <h2>$1,699.00      </h2>
+                                            </div>
+                                            <div class="hover"></div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div class="photo">
+                                                <img src="computer/1.jpg">
+                                            </div>
+                                            <div class="text">
+                                                <h3>ASUS ROG Zephyrus G14 GA403UV-QS201W ( R9 8945HS / 16GB / SSD 1TB</h3>
+                                                <h2>$1,699.00      </h2>
+                                            </div>
+                                            <div class="hover"></div>
+                                        </a>
+                                    </li>
+                                    
+                                </Ul>
+                            </div>
+                            
+                        </div>
+                            
+                    </div>
+                </div>
+                    <div class="in-right">
+                        <ul>
+                            <li>
+                                <a href="#">
+                                    <div class="ima">
+                                        <img src="computer/1.jpg">
+                                    </div>
+                                    <div class="te">
+                                        <h1>Asus VivoBook16</h1>
+                                        <h2>FREE: Backpack Asus, Mouse Wireless,  Mouse </h2>
+                                        <h1>1000$</h1>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li>
+                                <a href="#">
+                                    <div class="ima">
+                                        <img src="computer/1.jpg">
+                                    </div>
+                                    <div class="te">
+                                        <h1>Asus VivoBook16</h1>
+                                        <h2>FREE: Backpack Asus, Mouse Wireless,  Mouse </h2>
+                                        <h1>1000$</h1>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li>
+                                <a href="#">
+                                    <div class="ima">
+                                        <img src="computer/1.jpg">
+                                    </div>
+                                    <div class="te">
+                                        <h1>Asus VivoBook16</h1>
+                                        <h2>FREE: Backpack Asus, Mouse Wireless,  Mouse </h2>
+                                        <h1>1000$</h1>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li>
+                                <a href="#">
+                                    <div class="ima">
+                                        <img src="computer/1.jpg">
+                                    </div>
+                                    <div class="te">
+                                        <h1>Asus VivoBook16</h1>
+                                        <h2>FREE: Backpack Asus, Mouse Wireless,  Mouse </h2>
+                                        <h1>1000$</h1>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li>
+                                <a href="#">
+                                    <div class="ima">
+                                        <img src="computer/1.jpg">
+                                    </div>
+                                    <div class="te">
+                                        <h1>Asus VivoBook16</h1>
+                                        <h2>FREE: Backpack Asus, Mouse Wireless,  Mouse </h2>
+                                        <h1>1000$</h1>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li>
+                                <a href="#">
+                                    <div class="ima">
+                                        <img src="computer/1.jpg">
+                                    </div>
+                                    <div class="te">
+                                        <h1>Asus VivoBook16</h1>
+                                        <h2>FREE: Backpack Asus, Mouse Wireless,  Mouse </h2>
+                                        <h1>1000$</h1>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                     
+                        <ul>
+                            <li>
+                                <a href="#">
+                                    <div class="ima">
+                                        <img src="computer/1.jpg">
+                                    </div>
+                                    <div class="te">
+                                        <h1>Asus VivoBook16</h1>
+                                        <h2>FREE: Backpack Asus, Mouse Wireless,  Mouse </h2>
+                                        <h1>1000$</h1>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li>
+                                <a href="#">
+                                    <div class="ima">
+                                        <img src="computer/1.jpg">
+                                    </div>
+                                    <div class="te">
+                                        <h1>Asus VivoBook16</h1>
+                                        <h2>FREE: Backpack Asus, Mouse Wireless,  Mouse </h2>
+                                        <h1>1000$</h1>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li>
+                                <a href="#">
+                                    <div class="ima">
+                                        <img src="computer/1.jpg">
+                                    </div>
+                                    <div class="te">
+                                        <h1>Asus VivoBook16</h1>
+                                        <h2>FREE: Backpack Asus, Mouse Wireless,  Mouse </h2>
+                                        <h1>1000$</h1>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li>
+                                <a href="#">
+                                    <div class="ima">
+                                        <img src="computer/1.jpg">
+                                    </div>
+                                    <div class="te">
+                                        <h1>Asus VivoBook16</h1>
+                                        <h2>FREE: Backpack Asus, Mouse Wireless,  Mouse </h2>
+                                        <h1>1000$</h1>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li>
+                                <a href="#">
+                                    <div class="ima">
+                                        <img src="computer/1.jpg">
+                                    </div>
+                                    <div class="te">
+                                        <h1>Asus VivoBook16</h1>
+                                        <h2>FREE: Backpack Asus, Mouse Wireless,  Mouse </h2>
+                                        <h1>1000$</h1>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                   </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
